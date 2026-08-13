@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Jogos Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><span>Arcade</span> Studio</h1>
+    <p>Pressione as setas do teclado para jogar!</p>
+  </header>
+
+  <main class="container">
+    <section class="game-stage">
+      <div class="score-board">
+        <div>Pontos: <span id="score">0</span></div>
+        <div>Recorde: <span id="highScore">0</span></div>
+      </div>
+      
+      <div class="canvas-wrapper">
+        <canvas id="snakeCanvas" width="400" height="400"></canvas>
+        
+        <!-- Overlay para Iniciar/Reiniciar -->
+        <div id="gameOverScreen" class="overlay">
+          <h2 id="overlayTitle">Cobrinha</h2>
+          <p id="overlayMessage">Pressione o botão para começar</p>
+          <button onclick="iniciarJogo()">Jogar</button>
+        </div>
+      </div>
+
+      <div class="controls-hint">
+        <p>Controles: <strong>Setas do Teclado</strong> (Ou botões abaixo no celular)</p>
+        <div class="mobile-controls">
+          <button onclick="mudarDirecao('UP')">▲</button>
+          <div>
+            <button onclick="mudarDirecao('LEFT')">◄</button>
+            <button onclick="mudarDirecao('DOWN')">▼</button>
+            <button onclick="mudarDirecao('RIGHT')">►</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/snake.js"></script>
+</body>
+</html>
